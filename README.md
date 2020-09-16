@@ -8,10 +8,10 @@
 | email          | string | null: false, uniqueness:true|
 | password       | string | null: false                 |
 | last_name      | string | null: false                 |
-| first_name     | string | null: false                 |
-| last_name_kana | string | null: false                 |
-| first_name_kana| string | null: false                 |
-| birthday       | string | null: false                 |
+| first_name     | date   | null: false                 |
+| last_name_kana | date   | null: false                 |
+| first_name_kana| date   | null: false                 |
+| birthday       | date   | null: false                 |
 
 ### Association
 
@@ -21,8 +21,7 @@
 ## items テーブル
 
 | Column          | Type       | Options                       |
-| --------------- | ---------- | ----------------------------- |
-| images          | string     | null:false                    |     
+| --------------- | ---------- | ----------------------------- |  
 | name            | string     | null:false                    |
 | text            | text       | null:false                    |
 | category_id     | integer    | null:false                    |
@@ -60,7 +59,7 @@
 
 | Column       | Type      | Options                       |
 | ------------ | --------- | ----------------------------- |
-| postal_code  | integer   | null:false                    |
+| postal_code  | string    | null:false                    |
 | area_id      | integer   | null:false                    |      
 | municipality | string    | null:false                    |
 | block_number | string    | null:false                    |
