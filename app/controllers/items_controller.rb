@@ -8,4 +8,9 @@ class ItemsController < ApplicationController
 
   def create
   end
+
+  private
+
+  def message_params
+    params.reauire(:item).permit(:image)
 end
