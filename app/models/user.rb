@@ -5,14 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i
+         NAME_REGIX = /\A[ぁ-んァ-ン一-龥]/
+         NAME_KANA_REGIX = /\A[ァ-ヶー－]+\z/
 
       with_options presence: true do
          validates :nickname
-         validates :last_name, format:  { with: /\A[ぁ-んァ-ン一-龥]/, message: "Full-width characters"}
-         validates :first_name, format:  { with: /\A[ぁ-んァ-ン一-龥]/, message: "Full-width characters"}
-         validates :last_name_kana, format:  { with: /\A[ァ-ヶー－]+\z/, message: "Full-width katakana characters"}
-         validates :first_name_kana, format:  { with: /\A[ァ-ヶー－]+\z/, message: "Full-width katakana characters"}
+         validates :last_name, format:  { with: NAME_REGIX, message: "Full-width characters"}
+         validates :first_name, format:  { with: NAME_REGIX, message: "Full-width characters"}
+         validates :last_name_kana, format:  { with: NAME_KANA_REGIX, message: "Full-width katakana characters"}
+         validates :first_name_kana, format:  { with: NAME_KANA_REGIX, message: "Full-width katakana characters"}
          validates :birthday
-      end
          validates :password,format:  { with: PASSWORD_REGEX, message: "Password Include both letters and numbers"}
+      end
+         
 end
