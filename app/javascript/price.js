@@ -8,8 +8,8 @@ function price(){
       if(value >= 300 && value <= 9999999){
         let fee = parseInt( value * 0.1 )
         let profit = value - fee
-        sales_commission.innerHTML = fee;
-        sales_profit.innerHTML = profit;
+        sales_commission.innerHTML = fee.toLocaleString();
+        sales_profit.innerHTML = profit.toLocaleString();
       } else {
         let fee = '-'
         let profit = '-'
