@@ -2,6 +2,7 @@ function price(){
   const price_item = document.getElementById("item-price");
   const sales_commission = document.getElementById("add-tax-price");
   const sales_profit = document.getElementById("profit");
+   if(price_item != null) {
     price_item.addEventListener('keyup', () => {
         const value = price_item.value;
 
@@ -16,6 +17,6 @@ function price(){
         sales_commission.innerHTML = fee;
         sales_profit.innerHTML = profit;
       }
-    });
+    })};
 }
 window.addEventListener('load', price);
