@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_cost
   belongs_to_active_hash :area
   belongs_to_active_hash :shipping_time
-  has_one :buyer
+  has_one :buyer, dependent: :destroy
 
   with_options presence: true do
     validates :image
